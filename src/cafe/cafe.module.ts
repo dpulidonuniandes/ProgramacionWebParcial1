@@ -1,4 +1,14 @@
 import { Module } from '@nestjs/common';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { CafeEntity } from './cafe.entity';
+import { CafeService } from './cafe.service';
 
-@Module({})
-export class CafeModule {}
+@Module({
+  providers: [CafeService],
+  imports: [TypeOrmModule.forFeature([CafeEntity])]
+})
+export class CafeModule {
+
+  
+
+}
